@@ -1,44 +1,104 @@
-import { View, Text, FlatList, Image } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList, Image, ScrollView, TouchableOpacity } from 'react-native'
+// import WebView from 'react-native-webview'
+import React, { useState } from 'react'
+import { agregarFavorito, eliminarFavorito} from '../../redux/recetasReducer';
+import { useDispatch } from 'react-redux';
+import { Ionicons } from '@expo/vector-icons';
 
 import styles from './styles'
 
 const Ingredientes = ({route}) => {
   console.log(route);
 
-  const {ingredientes, preparacion, imagen} = route.params
-  // const {ingredientes} = recetas
+  const [esFavorito, setEsFavorito] = useState(false)
+  
+  // const {name, ingredientes, preparacion, image} = route.params.item
+  const {item} = route.params
 
-  const renderItemIngredientes = ({item}) => (
-    <View>
-        <Text>* {item}</Text>
-    </View>
-)
+  const dispatch = useDispatch()
 
-  const renderItemPreparacion = ({item}) => (
-    <View style={styles.item}>
-        <Text>{item}</Text>
+  const meGusta = (item) => {
+    if (esFavorito) {
+      dispatch(eliminarFavorito(item.idReceta))
+    } else {
+      dispatch(agregarFavorito(item))
+    }
+    setEsFavorito(!esFavorito);
+  }
+
+  // const [receta, setReceta] = useState({})
+
+  // useEffect(() => {
+  //   fetch(`https://api.spoonacular.com/recipes/${item}/information?apiKey=58622c27b46f4210898537e656372fc7`)
+  //   .then((respuesta) => respuesta.json())
+  //   .then((data) => setReceta(data))
+  // }, [])
+
+  // console.log(receta);
+
+  const renderIngredients = ({item}) => (
+    <View style={styles.listaIngredientes}>
+      {/* <Text style={styles.ingredientsText}>* {item.name} {item.amount} {item.unit}</Text> */}
+      <Text style={styles.ingredientsText}>* {item.cantidad} {item.ingrediente}</Text>
     </View>
-)
+  )
+
+  // const renderSteps = ({item}) => (
+  //   <View style={styles.instructionContainer}>
+  //     <Text style={styles.instructionText}>{item.number} {item.step}</Text>
+  //   </View>
+  // )
+
+  const renderInstructions = ({item}) => (
+    <View style={styles.listaInstrucciones}>
+      <Text style={styles.instructionText}>{item.number}- {item.step} </Text>
+      {/* <FlatList 
+        data={item.steps}
+        renderItem={renderSteps}
+        keyExtractor={item => item.number}
+      /> */}
+    </View>
+  )
 
   return (
-    <View style={styles.instrucciones}>
-      <Image source={imagen} style={styles.imagen}/>
-      <Text style={styles.titulo}>INGREDIENTES</Text>
-      <FlatList
-        data={ingredientes}
-        renderItem={renderItemIngredientes}
-        keyExtractor={item => item}
-        style={styles.lista}
-      />
-      <Text style={styles.titulo}>PREPARACIÓN</Text>
-      <FlatList
-        data={preparacion}
-        renderItem={renderItemPreparacion}
-        keyExtractor={item => item}
-        style={styles.lista}
-      />
-    </View>
+    <ScrollView>
+      <View style={styles.instrucciones}>
+        <TouchableOpacity onPress={meGusta}>
+          <Ionicons name="heart" size={24} color={"red"}/>
+        </TouchableOpacity>
+        {/* <Image source={receta.image} style={styles.imagen}/> */}
+        <Image source={item.image} style={styles.imagen}/>
+        {/* <Text style={styles.tituloReceta}>{receta.title}</Text> */}
+        <Text style={styles.tituloReceta}>{item.name}</Text>
+        <View style={styles.ingredientesContainer}>
+          <Text style={styles.titulo}>INGREDIENTES</Text>
+          <FlatList
+            // data={receta.extendedIngredients}
+            data={item.ingredientes}
+            renderItem={renderIngredients}
+            // keyExtractor={item => item.id}
+            keyExtractor={item => item.idIngrediente}
+          />
+        </View>
+        <View style={styles.preparacionContainer}>
+          <Text style={styles.titulo}>PREPARACIÓN</Text>
+          <FlatList 
+            // data={receta.analyzedInstructions}
+            data={item.preparacion}
+            renderItem={renderInstructions}
+            // keyExtractor={item => item.steps}
+            keyExtractor={item => item.number}
+          />
+          {/* <FlatList 
+            data={receta.analyzedInstructions.steps}
+            renderItem={renderInstructions}
+            keyExtractor={item => item.number}
+          /> */}
+          {/* <Text style={styles.titulo}>{receta.instructions}</Text> */}
+        </View>
+            {/* <WebView source={{uri: strYoutube}}/> */}
+      </View>
+    </ScrollView>
   )
 }
 

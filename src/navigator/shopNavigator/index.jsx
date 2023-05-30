@@ -6,23 +6,30 @@ import { NavigationContainer } from '@react-navigation/native'
 import Categories from '../../screens/categoriesScreen'
 import Recetas from '../../screens/recetasScreen'
 import Ingredientes from '../../screens/ingredientesScreen'
+import colors from '../../constantes/colors'
 
 const ShopNavigator = () => {
 
     const Stack = createNativeStackNavigator()
 
   return (
-    <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'>
+        <Stack.Navigator 
+          initialRouteName='Home'
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: colors.primario
+            }
+          }}
+        >
             <Stack.Screen 
               name='Home' 
               component={Categories}
-              options={{title: "Menu"}}/>
+              options={{title: "Menu"}}
+            />
             <Stack.Screen 
               name='Lista de recetas' 
               component={Recetas}
               options={({route})=>(
-                // console.log(route)
                 {
                   title: route.params.item.titulo
                 }
@@ -36,8 +43,6 @@ const ShopNavigator = () => {
                 }
               )}/>
         </Stack.Navigator>
-    </NavigationContainer>
-    
   )
 }
 

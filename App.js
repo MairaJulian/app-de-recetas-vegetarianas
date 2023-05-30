@@ -1,10 +1,14 @@
 
 import { useFonts } from 'expo-font';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
-import ShopNavigator from './src/navigator/shopNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './src/navigator/bottomTab/BottomTabNavigator';
+import { Provider } from 'react-redux';
+import {store} from './src/redux/store'
 
-export default function App() {
+export default function App() {  
 
   const [isPortarit, setIsPortarit] = useState(true)
 
@@ -32,16 +36,12 @@ export default function App() {
   if (!loaded) return null
 
   return (
-    <ShopNavigator />
-    // <View style={styles.container}>
-    //   {
-    //     isPortarit ?
-    //     <Text style={styles.texto}>Open up App.js to start working on your app!</Text>
-    //     :
-    //     <Text style={styles.texto2}>Open up App.js to start working on your app!</Text>
-    //   }
-    //   <StatusBar style="auto" />
-    // </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <BottomTabNavigator/>
+      </NavigationContainer>
+    </Provider>
+    
   );
 }
 

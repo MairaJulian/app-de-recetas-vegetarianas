@@ -1,22 +1,23 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
+    categoriasContainer: {
         // backgroundColor: "green"
         flex: 1,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: "#95CD41",
     },
     boton: {
         borderBottomWidth: 1,
-        borderBottomColor: "yellow",
+        borderBottomColor: "#F6D860",
         borderBottomEndRadius: 5,
-        backgroundColor: "yellow",
+        backgroundColor: "#F6D860",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around",
         padding: 10,
-        // borderRadius: 10,
+        margin: 5,
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         borderTopRightRadius: 20, 
@@ -35,6 +36,9 @@ const styles = StyleSheet.create({
         height: 60,
         flexDirection: "row",
         borderRadius: 20
+    },
+    lista: {
+        padding: 20,
     }
 })
 
