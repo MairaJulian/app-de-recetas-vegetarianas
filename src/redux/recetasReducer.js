@@ -6,9 +6,7 @@ export const favoritosSlice = createSlice({
     reducers: {
         agregarFavorito: (state, action) => {
             const nuevaReceta = action.payload
-            if(!state.find((receta)=>receta.idReceta === nuevaReceta.idReceta)) {
-                state.push(nuevaReceta)
-            }
+            
         },
         eliminarFavorito: (state, action) => {
             const recetaId = action.payload;

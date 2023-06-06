@@ -23,11 +23,12 @@ const Recetas = ({navigation, route}) => {
         <TouchableOpacity 
           style={styles.boton} 
           onPress={()=>navigation.navigate("Ingredientes y Preparación", {
-            item: item
             // name: item.name, 
             // ingredientes: item.ingredientes, 
             // preparacion: item.preparacion, 
-            // image: item.image
+            // image: item.image,
+            // idReceta: item.idReceta
+            item
           })}>
             <Text style={styles.texto}>{item.name}</Text>
             <Image source={item.image} style={styles.foto}/>

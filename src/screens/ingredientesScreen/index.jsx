@@ -1,29 +1,25 @@
 import { View, Text, FlatList, Image, ScrollView, TouchableOpacity } from 'react-native'
 // import WebView from 'react-native-webview'
-import React, { useState } from 'react'
-import { agregarFavorito, eliminarFavorito} from '../../redux/recetasReducer';
+// import React, { useState } from 'react'
+// import { agregarFavorito, eliminarFavorito} from '../../redux/recetasReducer';
 import { useDispatch } from 'react-redux';
+import { agregar } from '../../redux/favouriteReducer';
 import { Ionicons } from '@expo/vector-icons';
-
 import styles from './styles'
 
 const Ingredientes = ({route}) => {
+  console.log("esto es lo que llega dentro de route en preparacion");
   console.log(route);
 
-  const [esFavorito, setEsFavorito] = useState(false)
+  // const [esFavorito, setEsFavorito] = useState(false)
   
   // const {name, ingredientes, preparacion, image} = route.params.item
   const {item} = route.params
 
   const dispatch = useDispatch()
 
-  const meGusta = (item) => {
-    if (esFavorito) {
-      dispatch(eliminarFavorito(item.idReceta))
-    } else {
-      dispatch(agregarFavorito(item))
-    }
-    setEsFavorito(!esFavorito);
+  const handleMeGusta = (idReceta) => {
+    dispatch(agregar({idReceta}))  //PORQUE {id: id}??? Y PORQUE ES LO MISMO QUE {id}?????
   }
 
   // const [receta, setReceta] = useState({})
@@ -63,7 +59,7 @@ const Ingredientes = ({route}) => {
   return (
     <ScrollView>
       <View style={styles.instrucciones}>
-        <TouchableOpacity onPress={meGusta}>
+        <TouchableOpacity onPress={()=>handleMeGusta(item.idReceta)}>
           <Ionicons name="heart" size={24} color={"red"}/>
         </TouchableOpacity>
         {/* <Image source={receta.image} style={styles.imagen}/> */}
