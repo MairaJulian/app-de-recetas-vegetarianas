@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "PANADERIA",
-    "slug": "PANADERIA",
+    "name": "Recetas",
+    "slug": "app-recetas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -25,6 +25,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c3024ec9-57de-47c6-8b6a-335c86dec4d8"
+      }
+    },
+    "owner": "maira.julian",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c3024ec9-57de-47c6-8b6a-335c86dec4d8"
     }
   }
 }
