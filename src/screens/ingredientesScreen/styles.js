@@ -10,6 +10,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         backgroundColor: colors.fondo,
     },
+    
+    scrollViewContent: {
+        // flex: 1,
+        // justifyContent: "center",
+        // alignItems: "center",
+        // textAlign: "center",
+    },
     imagen: {
         width: 250,
         height: 250,
@@ -80,6 +87,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: "left",
         margin: 7
+    },
+    espacio: {
+        height: 100
     }
 })
 

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
     },
     texto: {
-        fontSize: 22,
+        fontSize: 18,
         marginRight: 10,
     },
     foto: {

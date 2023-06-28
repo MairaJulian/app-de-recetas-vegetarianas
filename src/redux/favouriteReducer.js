@@ -2,9 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 import RECETAS from "../constantes/dataBase"
 
 const initialState = {
-    value: {
-        favourite: [],
-    }
+    favourite: [],
 }
 
 const favouriteSlice = createSlice({

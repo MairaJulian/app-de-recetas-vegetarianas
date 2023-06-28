@@ -1,16 +1,23 @@
-import arroz from '../assets/imagenes/arrozOK.jpg'
-import fideos from '../assets/imagenes/fideosOK.jpg'
-import gluten from '../assets/imagenes/glutenOK.jpg'
+import vegana from '../assets/imagenes/vegana.jpg'
+import vegetariana from '../assets/imagenes/vegetariana.jpg'
+import carne from '../assets/imagenes/carne.jpg'
+import tartaDeChoclo from '../assets/imagenes/tartaDeChoclo.jpg'
+import milanesaDeBerenjena from '../assets/imagenes/milanesaDeBerenjena.jpg'
+import pastelDeCalabaza from '../assets/imagenes/pastelDeCalabaza.jpg'
+import risottoVegano from '../assets/imagenes/risottoVegano.jpg'
+import lentejasConVerduras from '../assets/imagenes/lentejasConVerduras.jpg'
+import albondigasVeganas from '../assets/imagenes/albondigasVeganas.jpg'
+import bistecALaMexicana from '../assets/imagenes/bistecALaMexicana.jpg'
 
 const RECETAS = [
     {
         idCategoria: 1,
         name: "COMIDAS VEGETARIANAS",
-        image: arroz,
+        image: vegetariana,
         listaDeComidas: [
             {
                 idReceta: "1",
-                image: arroz,
+                image: tartaDeChoclo,
                 name: "TARTA DE CHOCLO",
                 ingredientes: [
                     {
@@ -84,7 +91,7 @@ const RECETAS = [
             },
             {
                 idReceta: "2",
-                image: fideos,
+                image: milanesaDeBerenjena,
                 name: "MILANESA DE BERENJENA",
                 ingredientes: [
                     {
@@ -163,7 +170,7 @@ const RECETAS = [
             },
             {
                 idReceta: "3",
-                image: gluten,
+                image: pastelDeCalabaza,
                 name: "PASTEL DE CALABAZA",
                 ingredientes: [
                     {
@@ -255,14 +262,363 @@ const RECETAS = [
     {
         idCategoria: 2,
         name: "COMIDAS VEGANAS",
-        image: fideos,
-        listaDeComidas: []
+        image: vegana,
+        listaDeComidas: [
+            {
+                idReceta: "1",
+                image: risottoVegano,
+                name: "RISOTTO VEGANO",
+                ingredientes: [
+                    {
+                        ingrediente: "aceite de oliva virgen extra",
+                        cantidad: "",
+                        idIngrediente: "1"
+                    },
+                    {
+                        ingrediente: "arroz arborio",
+                        cantidad: "",
+                        idIngrediente: "2"
+                    },
+                    {
+                        ingrediente: "vino blanco",
+                        cantidad: "",
+                        idIngrediente: "3"
+                    },
+                    {
+                        ingrediente: "caldo de verduras o agua",
+                        cantidad: "",
+                        idIngrediente: "4"
+                    },
+                    {
+                        ingrediente: "mantequilla vegana",
+                        cantidad: "",
+                        idIngrediente: "5"
+                    },
+                    {
+                        ingrediente: "Queso parmesano vegano rallado",
+                        cantidad: "",
+                        idIngrediente: "6"
+                    }
+                ],
+                preparacion: [
+                    {
+                        number: "1",
+                        step: "Calienta el aceite en una sartén y añade los champiñones, el ajo y la sal. Remueve y cocina a fuego medio-alto hasta que se doren. Reserva."
+                    },
+                    {
+                        number: "2",
+                        step: "Calienta el aceite en una sartén a fuego medio-alto y añade el ajo, la cebolla y el apio. Remueve y cocina a fuego medio-alto hasta que se doren."
+                    },
+                    {
+                        number: "3",
+                        step: "Añade el arroz y cocina durante un par de minutos."
+                    },
+                    {
+                        number: "4",
+                        step: "Añade el vino y cocina hasta que el líquido se consuma."
+                    },
+                    {
+                        number: "5",
+                        step: "Echa 120 ml de caldo de verdura (½ taza) y remueve de vez de cuando. Cuando se absorba, añade más caldo y ve repitiendo este paso hasta que el arroz esté al dente. Esto te llevará unos 18-20 minutos."
+                    },
+                    {
+                        number: "6",
+                        step: "Apártalo del fuego y echa 120 ml más de caldo (½ taza), los champiñones cocinados, la sal, la pimienta, la mantequilla vegana y el queso vegano. Remueve hasta que estén todos los ingredientes integrados."
+                    },
+                    {
+                        number: "7",
+                        step: "Déjalo reposar cubierto durante 5 minutos."
+                    },
+                    {
+                        number: "8",
+                        step: "Sirve inmediatamente."
+                    },
+                ]
+            },
+            {
+                idReceta: "2",
+                image: lentejasConVerduras,
+                name: "LENTEJAS CON VERDURAS",
+                ingredientes: [
+                    {
+                        ingrediente: "lentejas (previamente remojadas)",
+                        cantidad: "2 tazas",
+                        idIngrediente: "1"
+                    },
+                    {
+                        ingrediente: "cebolla grande picada",
+                        cantidad: "1",
+                        idIngrediente: "2"
+                    },
+                    {
+                        ingrediente: "dientes de ajo picados",
+                        cantidad: "2",
+                        idIngrediente: "3"
+                    },
+                    {
+                        ingrediente: "pimiento rojo picado",
+                        cantidad: "1",
+                        idIngrediente: "4"
+                    },
+                    {
+                        ingrediente: "pimiento verde picado",
+                        cantidad: "1",
+                        idIngrediente: "5"
+                    },
+                    {
+                        ingrediente: "zanahorias peladas y cortadas en cubos pequeños",
+                        cantidad: "2",
+                        idIngrediente: "6"
+                    },
+                    {
+                        ingrediente: "papa grande pelada y cortada en cubos",
+                        cantidad: "1",
+                        idIngrediente: "7"
+                    },
+                    {
+                        ingrediente: "tomates sin cáscara, cortados en cubos",
+                        cantidad: "2",
+                        idIngrediente: "8"
+                    },
+                    {
+                        ingrediente: "pimentón dulce",
+                        cantidad: "1 cucharadita",
+                        idIngrediente: "9"
+                    },
+                    {
+                        ingrediente: "laurel, sal y pimienta, aceite de oliva y perejil",
+                        cantidad: "c/n",
+                        idIngrediente: "10"
+                    },
+                    {
+                        ingrediente: "caldo",
+                        cantidad: "8 tazas",
+                        idIngrediente: "11"
+                    },
+                ],
+                preparacion: [
+                    {
+                        number: "1",
+                        step: "En una cacerola, calentar un poco de aceite de oliva y agregar la cebolla y el ajo picados. Saltear unos minutos hasta que estén levemente dorados."
+                    },
+                    {
+                        number: "2",
+                        step: "Agrega los pimientos cortados y cocinar en el aceite por unos minutos más."
+                    },
+                    {
+                        number: "3",
+                        step: "Incorporar las zanahorias y la papa cortadas y remover con el resto de las verduras, cocinar por unos minutos. Luego agregar los tomates picados y remover."
+                    },
+                    {
+                        number: "4",
+                        step: "Una vez que las verduras estén tiernas agregar las lentejas, el agua o caldo, el pimentón dulce y la hoja de laurel. Salpimentar y mezclar todo suavemente."
+                    },
+                    {
+                        number: "5",
+                        step: "Llevar a ebullición y luego reducir el fuego al mínimo. Tapar la cacerola y cocinar las lentejas durante aproximadamente 45/50 minutos, o hasta que las verduras estén cocidas y tiernas."
+                    },
+                    {
+                        number: "6",
+                        step: "Es importante revolver de vez en cuando y prestar atención al líquido durante la cocción, para asegurarse de que las lentejas estén siempre cubiertas y no se peguen en el fondo."
+                    },
+                    {
+                        number: "7",
+                        step: "Una vez que las lentejas estén cocidas, rectificar de sal y pimienta si es necesario. Dejar reposar unos minutos antes de servir. "
+                    },
+                    {
+                        number: "8",
+                        step: "Servir caliente y con unas hojas de perejil por encima."
+                    },
+                ]
+            },
+            {
+                idReceta: "3",
+                image: albondigasVeganas,
+                name: "ALBÓNDIGAS VEGANAS",
+                ingredientes: [
+                    {
+                        ingrediente: "lentejas rojas",
+                        cantidad: "1 vasito",
+                        idIngrediente: "1"
+                    },
+                    {
+                        ingrediente: "trigo burgol",
+                        cantidad: "½ vasito",
+                        idIngrediente: "2"
+                    },
+                    {
+                        ingrediente: "aceite de oliva",
+                        cantidad: "3 cucharadas",
+                        idIngrediente: "3"
+                    },
+                    {
+                        ingrediente: "pasta de tomate",
+                        cantidad: "2 cucharadas",
+                        idIngrediente: "4"
+                    },
+                    {
+                        ingrediente: "pasta de pimiento rojo",
+                        cantidad: "1 cucharada",
+                        idIngrediente: "5"
+                    },
+                    {
+                        ingrediente: "cebolla de verdeo",
+                        cantidad: "1",
+                        idIngrediente: "6"
+                    },
+                    {
+                        ingrediente: "cebolla común",
+                        cantidad: "1",
+                        idIngrediente: "7"
+                    },
+                    {
+                        ingrediente: "perejil",
+                        cantidad: "c/n",
+                        idIngrediente: "8"
+                    },
+                    {
+                        ingrediente: "comino",
+                        cantidad: "c/n",
+                        idIngrediente: "9"
+                    },
+                    {
+                        ingrediente: "pimentón",
+                        cantidad: "c/n",
+                        idIngrediente: "10"
+                    },
+                    {
+                        ingrediente: "sal y pimienta",
+                        cantidad: "c/n",
+                        idIngrediente: "11"
+                    },
+                ],
+                preparacion: [
+                    {
+                        number: "1",
+                        step: "Cocinar las lentejas turcas en la misma cantidad de agua (1 taza de agua por 1 taza de lentejas) hasta que estén hechas casi puré."
+                    },
+                    {
+                        number: "2",
+                        step: "Mientras, picar las verduras. Reservar a un costado la cebolla de verdeo y el perejil."
+                    },
+                    {
+                        number: "3",
+                        step: "Rehogar la cebolla común bien picada hasta que esté transparente. Agregar la pasta de tomates y la pasta de morrón."
+                    },
+                    {
+                        number: "4",
+                        step: "Una vez que el tomate cambia de color y se torna un poco más oscuro: condimentar y revolver. Reservar."
+                    },
+                    {
+                        number: "5",
+                        step: "Una vez que las lentejas estén listas, en caliente sumar el trigo burgol y revolver bien. Tapar y dejar hidratar por media hora."
+                    },
+                    {
+                        number: "6",
+                        step: "Una vez transcurrido ese tiempo sumar la mezcla que se cocinó previamente, el perejil y la cebolla de verdeo. Salpimentar y fuera anillos: mezclar con las manos."
+                    },
+                    {
+                        number: "7",
+                        step: "Darle formas de albóndigas y listo! Se come en crudo."
+                    },
+                    {
+                        number: "8",
+                        step: "Se sirve encima de hojas de lechuga y se puede acompañar con una salsita de yogurt."
+                    },
+                ]
+            },
+        ]
     }, 
     {
         idCategoria: 3,
         name: "COMIDAS CON CARNE",
-        image: gluten,
-        listaDeComidas: []
+        image: carne,
+        listaDeComidas: [
+            {
+                idReceta: "1",
+                image: bistecALaMexicana,
+                name: "BISTEC A LA MEXICANA",
+                ingredientes: [
+                    {
+                        ingrediente: "filetes de ternera",
+                        cantidad: "4",
+                        idIngrediente: "1"
+                    },
+                    {
+                        ingrediente: "cebolla grande",
+                        cantidad: "1",
+                        idIngrediente: "2"
+                    },
+                    {
+                        ingrediente: "tomates",
+                        cantidad: "2",
+                        idIngrediente: "3"
+                    },
+                    {
+                        ingrediente: "chiles serranos (opcional)",
+                        cantidad: "2",
+                        idIngrediente: "4"
+                    },
+                    {
+                        ingrediente: "pimiento rojo",
+                        cantidad: "½",
+                        idIngrediente: "5"
+                    },
+                    {
+                        ingrediente: "pimiento verde",
+                        cantidad: "½",
+                        idIngrediente: "6"
+                    },
+                    {
+                        ingrediente: "dientes de ajo",
+                        cantidad: "2",
+                        idIngrediente: "7"
+                    },
+                    {
+                        ingrediente: "aceite vegetal",
+                        cantidad: "c/n",
+                        idIngrediente: "8"
+                    },
+                    {
+                        ingrediente: "sal y pimienta",
+                        cantidad: "c/n",
+                        idIngrediente: "9"
+                    },
+                    {
+                        ingrediente: "comino",
+                        cantidad: "c/n",
+                        idIngrediente: "10"
+                    },
+                    {
+                        ingrediente: "cilantro fresco (para decorar)",
+                        cantidad: "c/n",
+                        idIngrediente: "11"
+                    },
+                ],
+                preparacion: [ 
+                    {
+                        number: "1",
+                        step: "En una sartén grande, calentar un poco de aceite vegetal a fuego medio-alto. Incorporar los filetes de res y cocinar por ambos lados hasta que estén dorados. Retirarlos de la sartén y reservar."
+                    },
+                    {
+                        number: "2",
+                        step: "En la misma sartén, agrega la cebolla picada, los tomates cortados en cubos, los pimientos y los chiles serranos (Se les pueden quitar las semillas para reducir el picante). Saltear hasta que la cebolla esté transparente y los tomates y pimientos suaves."
+                    },
+                    {
+                        number: "3",
+                        step: "Agregar los dientes de ajo picados y sazonar con sal, pimienta y comino. Cocinar por unos minutos más para que los sabores se integren."
+                    },
+                    {
+                        number: "4",
+                        step: "Volver a poner los filetes de res en la sartén y sumergirlos en la salsa para que se impregnen de los sabores. Cocinar a fuego medio-bajo durante unos minutos hasta que la carne esté cocida."
+                    },
+                    {
+                        number: "5",
+                        step: "Servir el bistec a la mexicana caliente, espolvoreado con cilantro fresco picado por encima."
+                    },
+                ]
+            },
+        ]
     }
 ]
 

@@ -1,21 +1,26 @@
 import { StyleSheet } from "react-native";
+import colors from "../../constantes/colors";
 
 const styles = StyleSheet.create({
+    scroll: {
+        flex: 1,
+        backgroundColor: colors.fondo,
+    },
     categoriasContainer: {
-        // backgroundColor: "green"
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#95CD41",
+        backgroundColor: colors.fondo,
     },
     boton: {
         borderBottomWidth: 1,
-        borderBottomColor: "#F6D860",
+        borderBottomColor: colors.cuaternario,
         borderBottomEndRadius: 5,
-        backgroundColor: "#F6D860",
+        // backgroundColor: "#F6D860",
+        backgroundColor: colors.cuaternario,
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         padding: 10,
         margin: 5,
         borderTopLeftRadius: 20,
@@ -28,7 +33,7 @@ const styles = StyleSheet.create({
         shadowRadius: 15,
     },
     texto: {
-        fontSize: 22,
+        fontSize: 18,
         marginRight: 10,
     },
     foto: {
